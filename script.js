@@ -81,19 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initPortfolio();
 });
 
-document.getElementById('booking-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
-
-    alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email} regarding ${service}.`);
-    
-    this.reset();
-});
-
 const aboutObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
