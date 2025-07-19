@@ -144,17 +144,14 @@
     </section>
 
     <section id="about" class="full-height-section bg-gradient-to-br from-cyan-100 via-blue-50 to-white relative overflow-hidden">
-    <!-- Background Circles -->
     <div class="absolute inset-0 opacity-10">
         <div class="absolute top-10 left-10 w-32 h-32 bg-cyan-200 rounded-full"></div>
         <div class="absolute bottom-20 right-20 w-24 h-24 bg-blue-200 rounded-full"></div>
         <div class="absolute top-1/2 right-10 w-16 h-16 bg-cyan-300 rounded-full"></div>
     </div>
 
-    <!-- Container -->
-    <div class="container mx-auto px-6 max-w-6xl relative z-10 space-y-24 py-12">
 
-        <!-- Section 1: Personal Introduction -->
+    <div class="container mx-auto px-6 max-w-6xl relative z-10 space-y-24 py-12">
         <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 bg-white/95 backdrop-blur-sm p-6 lg:p-8 xl:p-12 rounded-2xl shadow-2xl">
             <div class="lg:w-2/5 flex justify-center">
                 <div class="relative">
@@ -181,7 +178,6 @@
             </div>
         </div>
 
-        <!-- Section 2: Hobbies and Mission -->
         <div class="bg-white/95 backdrop-blur-sm p-6 lg:p-8 xl:p-12 rounded-2xl shadow-2xl">
             <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
                 <div class="space-y-4">
@@ -217,7 +213,6 @@
             </div>
         </div>
 
-        <!-- Section 3: Spina Bifida -->
         <div class="bg-white/95 backdrop-blur-sm p-6 lg:p-8 xl:p-12 rounded-2xl shadow-2xl">
             <div class="space-y-4 lg:space-y-6">
                 <div class="border-l-4 border-red-400 pl-6">
@@ -237,7 +232,6 @@
             </div>
         </div>
 
-        <!-- Section 4: Diagnosed Conditions -->
         <div class="bg-white/95 backdrop-blur-sm p-6 lg:p-8 xl:p-12 rounded-2xl shadow-2xl">
             <div class="space-y-6 lg:space-y-8">
                 <div class="space-y-4 lg:space-y-6">
@@ -277,54 +271,6 @@
 
     </div>
 </section>
-
-
-    <script>
-        const slider = document.getElementById('about-slider');
-        const slides = document.querySelectorAll('#about-slider > div');
-        const dots = document.querySelectorAll('.slider-dot');
-        const prevBtn = document.getElementById('prev-slide');
-        const nextBtn = document.getElementById('next-slide');
-        let currentIndex = 0;
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-   
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.remove('bg-white/50');
-                    dot.classList.add('bg-white', 'shadow-lg', 'scale-125');
-                } else {
-                    dot.classList.add('bg-white/50');
-                    dot.classList.remove('bg-white', 'shadow-lg', 'scale-125');
-                }
-            });
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlider();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlider();
-        });
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                currentIndex = parseInt(dot.getAttribute('data-index'));
-                updateSlider();
-            });
-        });
-
-        updateSlider();
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlider();
-        }, 15000); 
-    </script>
 
     <style>
         @keyframes slideUp {
